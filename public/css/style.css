@@ -1,0 +1,279 @@
+/* styleing your wiews home in here.. */
+@import url("https://fonts.googleapis.com/css2?family=Wellfleet&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background: #182532;
+    overflow: hidden;
+    margin: 0px;
+    user-select: none;
+    /* background: url('https://github.com/FrankyRay/Random-Stuff/blob/main/Blue-Sky.jpg?raw=true'); */
+    color: #fff;
+}
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+#container {
+    color: white;
+    font-family: "Wellfleet", monospace;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px double #99c9e5 !important;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 5%;
+    padding: 6%;
+    z-index: 9999;
+    /*box-shadow: 0 20px 20px rgba(180, 180, 180, 0.4);*/
+    /*background: black;*/
+    /*background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("https://raw.githubusercontent.com/FrankyRay/GBRlogoLK/main/Desain%20tanpa%20judul.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background: transparent;
+}
+.logo-lk {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#popup-win {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    width: 80%;
+    height: 60%;
+    border-radius: 3px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("https://raw.githubusercontent.com/FrankyRay/GBRlogoLK/main/Desain%20tanpa%20judul.jpg");
+
+    box-shadow: 0 0 50px rgba(220, 180, 180, 0.7);
+    border: 5px solid #f3a261;
+    z-index: 9999;
+}
+@keyframes muncul {
+    20% {
+        transform: scale(0.8);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1);
+    }
+}
+@keyframes bxsh {
+    20% {
+        box-shadow: 5px -5px 20px #e83030;
+    }
+    40% {
+        box-shadow: 0 5px 20px #30e862;
+    }
+    60% {
+        box-shadow: 5px -5px 20px #3060e8;
+    }
+}
+#txt-win {
+    color: white;
+    text-align: center;
+    font-weight: 1000;
+    font-size: 5em;
+    padding: 0 20px;
+}
+#title-dp {
+    /*animation: bbottom 3s ease infinite alternate;
+    animation: tshadow 4s ease infinite alternate;*/
+    border-bottom: 3px solid white;
+}
+
+@keyframes bbottom {
+    20% {
+        border-bottom: 3px solid #3060e8;
+    }
+    40% {
+        border-bottom: 3px solid #30e862;
+    }
+    60% {
+        border-bottom: 3px solid #e83030;
+    }
+    80% {
+        border-bottom: 3px solid #ebea52;
+    }
+}
+@keyframes tshadow {
+    20% {
+        text-shadow: 0 0 30px #30e862;
+    }
+    40% {
+        text-shadow: 0 0 30px #3060e8;
+    }
+    60% {
+        text-shadow: 0 0 30px #e83030;
+    }
+    80% {
+        text-shadow: 0 0 30px #ebea52;
+    }
+}
+@keyframes acakP {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    40% {
+        opacity: 0.7;
+        transform: scale(0.6);
+    }
+    80% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+#number-generator {
+    animation: tshadow 5s ease infinite alternate;
+    text-shadow: 0 0 10px #8952eb;
+}
+.atena1 {
+    background: #ed6825;
+    width: 10px;
+    height: 35px;
+    transform: rotate(-50deg);
+}
+.atena2 {
+    transform: rotate(50deg);
+    background: #ed6825;
+    width: 10px;
+    height: 35px;
+}
+.con-atena {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    position: absolute;
+    top: 5%;
+}
+.animationText {
+    animation: linearText 0.15s linear infinite !important;
+}
+
+@keyframes linearText {
+    0% {
+        transform: translateX(300%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-200%);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #congrats,
+    #title {
+        margin: 0px;
+        font-size: 1em;
+    }
+    #number-generator {
+        margin: 0px;
+        font-size: 5em;
+        color: white;
+        /*   -webkit-text-stroke: 6px black; */
+    }
+    .logo-lk {
+        margin-top: 10px;
+        width: 50px;
+    }
+    #txt-win {
+        font-size: 2em;
+    }
+    #popup-win {
+        height: auto;
+        border: 3px solid #f3a261;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #container {
+        border: 10px double #f3a261;
+        border-radius: 5px;
+        margin: 3%;
+        padding: 15%;
+    }
+    .atena1 {
+        width: 5px;
+        height: 15px;
+    }
+    .atena2 {
+        width: 5px;
+        height: 15px;
+    }
+    .con-atena {
+        position: absolute;
+        top: 0;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #congrats,
+    #title {
+        margin: 0px;
+        font-size: 5em;
+    }
+    #congrats {
+      position: relative;
+      bottom: 13%;
+    }
+    #number-generator {
+        margin: 0px;
+        font-size: 15em;
+        color: white;
+        text-shadow: 0 0 30px #8952eb;
+        /*   -webkit-text-stroke: 6px black; */
+    }
+    #title-dp {
+        margin: 0px;
+        padding: 0;
+        font-size: 3em;
+    }
+    .logo-lk {
+        margin-top: 35px;
+        margin-right: 35px;
+        width: 100px;
+    }
+    #popup-win {
+        height: 70%;
+    }
+    #txt-win {
+        font-size: 4.5em;
+    }
+    #container {
+        border: 15px double #f3a261;
+        border-radius: 5px;
+        margin: 5%;
+        padding: 10%;
+    }
+    /* atur height bar utk kompoter disini yah*/
+    .con-atena {
+        position: absolute;
+        top: 4%;
+    }
+}

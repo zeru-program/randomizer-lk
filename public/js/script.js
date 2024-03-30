@@ -1,6 +1,7 @@
 // drop your system JavaScript in here.. (import form home)
 
 const numGen = document.getElementById("number-generator");
+const devView = document.getElementById('dev');
 const congrats = document.getElementById("congrats");
 const jsConfetti = new JSConfetti();
 let defTarget = true;
@@ -33,13 +34,13 @@ function stopRunning() {
   numGen.classList.remove("animationText");
   clearInterval(inv);
   numGen.innerHTML = undian;
-        jsConfetti.addConfetti({
-          confettiRadius: 6,
-          confettiNumber: 200,
-        });
+  jsConfetti.addConfetti({
+    confettiRadius: 6,
+    confettiNumber: 200,
+  });
   congrats.style.animation = "bouceP 2s ease infinite alternate";
   congrats.style.possition = "absolute";
-  congrats.innerHTML = `Selamat kepada undian <font class="fw-bold text-center" style="color: #99c9e5;">${undian} </font> ! , Silakan maju kedepan`;
+  congrats.innerHTML = `Selamat kepada undian <font class="fw-bold text-center" style="color: #99c9e5;">${undian} </font>, Silakan maju kedepan ! `;
 
   // var winUndian = document.getElementById("txt-win");
   // winUndian.innerHTML = `SELAMAT KEPADA UNDIAN<br><font style="background: url('https://raw.githubusercontent.com/zeru-program/Logo_LK_2023/main/bgUd.jpg'); color: white; padding: 0 20px; text-shadow: 0 0 5px rgba(35, 35, 35, 0.7);"> ${undian}</font>`;
@@ -50,13 +51,13 @@ function stopRunningCustom() {
   numGen.classList.remove("animationText");
   clearInterval(inv);
   numGen.innerHTML = inputTarget.value;
-        jsConfetti.addConfetti({
-          confettiRadius: 6,
-          confettiNumber: 200,
-        });
+  jsConfetti.addConfetti({
+    confettiRadius: 6,
+    confettiNumber: 200,
+  });
   congrats.style.animation = "bouceP 2s ease infinite alternate";
   congrats.style.possition = "absolute";
-  congrats.innerHTML = `Selamat kepada undian <font class="fw-bold text-center" style="color: #99c9e5;">${inputTarget.value} </font> ! , Silakan maju kedepan`;
+  congrats.innerHTML = `Selamat kepada undian <font class="fw-bold text-center" style="color: #99c9e5;">${inputTarget.value} </font>, Silakan maju kedepan !`;
 
   // var winUndian = document.getElementById("txt-win");
   // winUndian.innerHTML = `SELAMAT KEPADA UNDIAN<br><font style="background: url('https://raw.githubusercontent.com/zeru-program/Logo_LK_2023/main/bgUd.jpg'); color: white; padding: 0 20px; text-shadow: 0 0 5px rgba(35, 35, 35, 0.7);"> ${undian}</font>`;
@@ -73,15 +74,16 @@ function handleKeyPress(e) {
   if (e.type === "keypress" && e.keyCode !== 32) return;
 
   if (running) {
-      if (defTarget) {
-         stopRunning();
-      } else {
-         stopRunningCustom();
-      }
+    if (defTarget) {
+      stopRunning();
+    } else {
+      stopRunningCustom();
+    }
     audioW.play();
-    setTimeout( () => {
-    audioC.pause();
+    setTimeout(() => {
+      audioC.pause();
     }, 400);
+    console.log('count')
     // hapus setTimeout sampe 4000); untuk menghilangkan efek muncul hilang otomatis, dan yang akan aktif sistem keyboard nya yang bisa munculin dan hilangin pop up. hapus atau block dengan coment /* */
     /*    setTimeout(function () {
             const winBox = document.getElementById("popup-win");
@@ -104,11 +106,11 @@ function handleKeyPress(e) {
 // audio system
 var audioW = document.getElementById("winAudio");
 var audioC = document.getElementById("counterAudio");
-  audioC.addEventListener("timeupdate", function() {
-    if (this.currentTime >= 1.8) {
-      this.currentTime = 0.1; // Mengatur ulang waktu ke 0.8 detik
-    }
-  });
+audioC.addEventListener("timeupdate", function() {
+  if (this.currentTime >= 1.8) {
+    this.currentTime = 0.1; // Mengatur ulang waktu ke 0.8 detik
+  }
+});
 
 
 
@@ -126,7 +128,7 @@ function valDefTar() {
   labelTarget.textContent = "Default ";
   inputTarget.style.display = "none";
   inputTarget.value = "default";
-}  
+}
 function valCusTar() {
   dropCus.classList.add('active');
   dropDef.classList.remove('active');
@@ -134,7 +136,7 @@ function valCusTar() {
   inputTarget.style.display = "flex";
   inputTarget.value = "";
   inputTarget.focus();
-}  
+}
 
 
 // save dev close dev
@@ -189,30 +191,9 @@ function toggleFullscreen() {
 
 
 // sistem muuncul dan close pop up pake ctrl + d/c
-document.addEventListener("keydown", function(event) {
-  if (event.ctrlKey && (event.key === "d" || event.key === "D")) {
-    const winBox = document.getElementById("popup-win");
-    winBox.style.animation = "muncul 3s ease";
-    winBox.style.display = "flex";
-  }
-  if (event.ctrlKey && (event.key === "c" || event.key === "C")) {
-    const conPopup = document.getElementById("popup-win");
-    conPopup.style.animation = "fadeOut 2s ease";
-    conPopup.addEventListener("animationend", function() {
-      conPopup.style.display = "none";
-    });
-  }
-  /* lgsg klik d atau c utk close dan muncul pop up*/
-  if (event.key === "d" || event.key === "D") {
-    const winBox = document.getElementById("popup-win");
-    winBox.style.animation = "muncul 3s ease";
-    winBox.style.display = "flex";
-  }
-  if (event.key === "c" || event.key === "C") {
-    const conPopup = document.getElementById("popup-win");
-    conPopup.style.animation = "fadeOut 2s ease";
-    conPopup.addEventListener("animationend", function() {
-      conPopup.style.display = "none";
-    });
+document.addEventListener("keydown", function(e) {
+  if (e.altKey && (e.key === "s" || e.key === "S")) {
+    devView.classList.add('d-flex');
+    devView.classList.remove('d-none');
   }
 });

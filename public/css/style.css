@@ -5,12 +5,15 @@
 
 body {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background: #182532;
+  background: url('https://raw.githubusercontent.com/zeru-program/randomizer-lk/master/public/img/bg-paskah-lk.png') !important;
+  background-size: cover !important;
+  opacity: 1;
+  /* background: #182532; */
   overflow: hidden;
   margin: 0px;
   user-select: none;
@@ -51,14 +54,20 @@ body {
     background-size: cover; */
   background: transparent;
 }
+
+/* linear-gradient(red, yellow) */
+
+
 @keyframes borderWitdh {
   0% {
-  border: 2px double #99c9e500;
+    border: 2px double #99c9e500;
   }
+
   100% {
-  border: 2px double #99c9e5;
+    border: 2px double #99c9e5;
   }
 }
+
 .logo-lk {
   position: absolute;
   top: 0;
@@ -116,6 +125,7 @@ body {
   font-size: 5em;
   padding: 0 20px;
 }
+
 /*
 @keyframes bbottom {
   20% {
@@ -184,9 +194,9 @@ body {
 #number-generator {
   font-weight: 800 !important;
   font-family: "Wellfleet", Sans-Serif !important;
- /* animation: fadeIn;
+  /* animation: fadeIn;
   animation-duration: 2.5s;*/
-      /*   color: transparent !important;
+  /*   color: transparent !important;
       text-shadow: 0 0 4px #fff; */
 }
 
@@ -247,11 +257,13 @@ body {
   animation-duration: 1s;
 }
 
-#title-dp, #title {
+#title-dp,
+#title {
   font-family: "Poppins", Sans-Serif !important;
   font-weight: 700;
   white-space: nowrap;
 }
+
 .dev-setting {
   display: flex;
   flex-direction: column;
@@ -287,6 +299,7 @@ body {
   margin: 10px;
   background: rgba(0, 0, 0, .2);
 }
+
 .con-text {
   margin-bottom: 10%;
 }
@@ -296,23 +309,28 @@ body {
   0% {
     transform: scale(.9);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 .blink-ng {
   height: 150px;
   background: #6262624a;
 }
+
 /* media screen for device handphone */
 @media only screen and (max-width: 768px) {
-.con-text {
-  margin-bottom: -10% !important;
-}
+  .con-text {
+    margin-bottom: -10% !important;
+  }
+
   #title {
     margin: 0px;
     font-size: 1em;
   }
+
   #congrats {
     margin: 0;
     position: fixed;
@@ -347,13 +365,14 @@ body {
     width: 90%;
     padding: 15%;
   }
-  
+
   .box-dev {
     margin: 5px;
     width: 170px;
     height: 130px;
   }
-/* 
+
+  /* 
   .atena1 {
     width: 5px;
     height: 15px;
@@ -373,9 +392,10 @@ body {
 
 /* media screen for desktop mode*/
 @media only screen and (min-width: 768px) {
-.con-text {
-  margin-bottom: 8% !important;
-}
+  .con-text {
+    margin-bottom: 1% !important;
+  }
+
   #congrats,
   #title {
     margin: 0px;
@@ -385,6 +405,7 @@ body {
   #congrats {
     position: fixed;
     bottom: 13%;
+    font-size: 2.5em !important;
   }
 
   #number-generator {
@@ -393,9 +414,11 @@ body {
     color: white;
     /*   -webkit-text-stroke: 6px black; */
   }
+
   #title {
-  letter-spacing: 4px;
+    letter-spacing: 4px;
   }
+
   #title-dp {
     margin: 0px;
     padding: 0;
@@ -407,7 +430,7 @@ body {
     margin-right: 45px;
     width: 80px;
   }
-  
+
   #popup-win {
     height: 70%;
   }
@@ -424,7 +447,7 @@ body {
   }
 
   /* atur height bar utk kompoter disini yah*/
- /* .con-atena {
+  /* .con-atena {
     position: absolute;
     top: 4%;
   } */
